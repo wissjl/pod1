@@ -69,7 +69,7 @@ def run_lstm_model(input_file, output_base_path):
                 print(f"Training LSTM model with layers ({u1}, {u2})")
                 model = build_lstm_model(u1, u2, (n_lookback, 1))
                 model.fit(X_train, y_train, epochs=50, batch_size=32,
-                          validation_split=0.2, verbose=0)
+                          validation_split=0.2, verbose=1)
 
                 test_pred = model.predict(X_test)
                 test_pred = scaler.inverse_transform(test_pred).flatten()
